@@ -1,15 +1,3 @@
-/*******************************************************************************
- * data-structures/returnelement.h
- *
- * Some definitions that are important as function return values.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef RETURNELEMENT_H
 #define RETURNELEMENT_H
 
@@ -51,31 +39,6 @@ inline bool successful(ReturnCode ec)
 {
     return (static_cast<uint>(ec) & 1u);
 }
-
-
-// class ReturnElement
-// {
-// public:
-//     using Key  = uint64_t;
-//     using Data = uint64_t;
-
-//     ReturnElement() : first(0), second(0) { }
-//     ReturnElement(Key k, Data d) : first(k), second(d) { }
-
-//     static ReturnElement getEmpty() { return ReturnElement( 0, 0 ); }
-
-//     Key  first;
-//     Data second;
-
-//     bool isValid()  const { return first != 0; }
-
-//     operator bool() const
-//     {   return first != 0;   }
-//     operator std::tuple<Key&, Data&> ()
-//     {   return std::tuple<Key&, Data&>{ first, second };   }
-
-// private:
-// };
 
 }
 

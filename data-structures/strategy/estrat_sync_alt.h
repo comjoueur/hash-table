@@ -1,51 +1,9 @@
-/*******************************************************************************
- * data-structures/strategy/estrat_sync_alt.h
- *
- * see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef ESTRAT_SYNC_NUMA_H
 #define ESTRAT_SYNC_NUMA_H
 
 #include <atomic>
 #include <stdexcept>
 #include <iostream>
-
-// EXPERIMENTAL !!!!!!!!
-
-/*******************************************************************************
- *
- * This is an EXPERIMENTAL exclusion strategy for our growtable.
- *
- * Every exclusion strategy has to implement the following
- *  - subclass: global_data_t      (is stored at the growtable object)
- *     - THIS OBJECT STORES THE ACTUAL HASH TABLE (AT LEAST THE POINTER)
- *           (This is important, because the exclusion strategy dictates,
- *            if reference counting is necessary.)
- *  - subclass: local_data_t       (is stored at each handle)
- *     - init()
- *     - deinit()
- *     - get_table()   (gets current table and protects it from destruction)
- *     - rls_table()   (stops protecting the table)
- *     - grow()       (creates a new table and initiates a growing step)
- *     - help_grow()   (called when an operation is unsuccessful,
- *                     because the table is growing)
- *     - migrate()    (called by the worker strategy to execute the migration.
- *                     Done here to ensure the table is not concurrently freed.)
- *
- * This specific strategy uses a synchronized growing approach, where table
- * updates and growing steps cannot coexist to do this some flags are used
- * (they are stored in the blobal data object). They will be set during each
- * operation on the table. Since the growing is synchronized, storing
- * the table is easy (using some atomic pointers).
- *
- ******************************************************************************/
 
 namespace growt {
 

@@ -1,15 +1,3 @@
-/*******************************************************************************
- * tests/del_test.cpp
- *
- * deletion test for more information see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include "tests/selection.h"
 
 #include "utils/default_hash.hpp"
@@ -23,16 +11,6 @@
 #ifdef MALLOC_COUNT
 #include "malloc_count.h"
 #endif
-
-
-/*
- * This Test is meant to test the tables performance on uniform random inputs.
- * 0. Creating 2n random keys
- * 1. Inserting n elements (key, index) - the index can be used for validation
- * 2. Looking for n elements - using different keys (likely not finding any)
- * 3. Looking for the n inserted elements (hopefully finding all)
- *    (correctness test using the index)
- */
 
 const static uint64_t range = (1ull << 62) -1;
 namespace otm = utils_tm::out_tm;

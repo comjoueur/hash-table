@@ -1,15 +1,3 @@
-/*******************************************************************************
- * utils/commandline.h
- *
- * Really simple command line parser for our tests/benchmarks
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef COMMANDLINE_H
 #define COMMANDLINE_H
 

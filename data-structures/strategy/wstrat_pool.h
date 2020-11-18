@@ -1,15 +1,3 @@
-/*******************************************************************************
- * data-structures/strategy/wstrat_pool.h
- *
- * see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef WSTRAT_POOL_H
 #define WSTRAT_POOL_H
 
@@ -17,27 +5,6 @@
 
 #include <atomic>
 #include <thread>
-
-/*******************************************************************************
- *
- * This is a worker strategy for our growtable.
- *
- * Every worker strategy has to implement the following
- *  - subclass: global_data_t      (is stored at the growtable object)
- *  - subclass: local_data_t       (is stored at each handle)
- *     - init(...)
- *     - deinit()
- *     - execute_migration(...)
- *
- * This specific strategy uses a thread-pool for growing.
- * Every thread who creates a handle will generate a growing
- * thread, which will help with each migration. The thread will
- * be stopped once the handle is deleted.
- *
- * NOTE: The migration thread will be pinned to the core, it was created from.
- *       This is good if all hardware threads are used and pinned .
- *
- ******************************************************************************/
 
 namespace growt {
 

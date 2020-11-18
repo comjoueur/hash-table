@@ -1,15 +1,3 @@
-/*******************************************************************************
- * example/stress_test_weird.cpp
- *
- * This test stress tests some uncommon and more critical functions like
- * move constructors and element_counts.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
 
 #include "tests/selection.h"
 

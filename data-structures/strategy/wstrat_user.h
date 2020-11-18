@@ -1,38 +1,8 @@
-/*******************************************************************************
- * data-structures/strategy/wstrat_user.h
- *
- * see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef WSTRAT_USER_H
 #define WSTRAT_USER_H
 
 #include <cstddef>
 #include <atomic>
-
-/*******************************************************************************
- *
- * This is a worker strategy for our growtable.
- *
- * Every worker strategy has to implement the following
- *  - subclass: global_data_t      (is stored at the growtable object)
- *  - subclass: local_data_t       (is stored at each handle)
- *     - init(...)
- *     - deinit()
- *     - execute_migration(...)
- *
- * This specific strategy uses user-threads for the migration.
- * Whenever the table is growing, all new operations help migrating the
- * old table, before the operation is executed. This is a very simple
- * technique therefore, nothing has to be saved/initialized
- *
- ******************************************************************************/
 
 namespace growt {
 

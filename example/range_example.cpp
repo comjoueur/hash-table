@@ -7,8 +7,6 @@
 #include "allocator/alignedallocator.h"
 using murmur2_hash = utils_tm::hash_tm::murmur2_hash;
 
-//////////////////////////////////////////////////////////////
-// USING definitions.h (possibly slower compilation)
 #include "data-structures/definitions.h"
 using Table_t = growt::uaGrow<murmur2_hash, growt::AlignedAllocator<> >;
 

@@ -1,15 +1,3 @@
-################################################################################
-# misc/cmake/FindXXHash.cmake
-#
-# Finds xxHash directory
-# Looks in PATH and XXHASH_ROOT environment variables
-#
-# Part of Project growt - https://github.com/TooBiased/growt.git
-#
-# Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
-#
-# All rights reserved. Published under the BSD-2 license in the LICENSE file.
-################################################################################
 
 message(STATUS "Looking for xxHash Implementation")
 

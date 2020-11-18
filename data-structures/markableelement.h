@@ -1,17 +1,3 @@
-/*******************************************************************************
- * data-structures/markableelement.h
- *
- * MarkableElements represent the cells of a table, that has to be able to mark
- * a copied cell (used in uaGrow and paGrow). They encapsulate some CAS and
- * update methods.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef MARKABLEELEMENT_H
 #define MARKABLEELEMENT_H
 

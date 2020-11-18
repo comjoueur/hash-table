@@ -1,17 +1,5 @@
 #pragma once
 
-/*******************************************************************************
- * commandline.hpp
- *
- * Simple tool to read command line parameters
- *
- * Part of my utils library utils_tm - https://github.com/TooBiased/utils_tm.git
- *
- * Copyright (C) 2019 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include <string>
 #include <vector>
 #include <tuple>

@@ -1,16 +1,3 @@
-/*******************************************************************************
- * utils/pushbackarray.h
- *
- * Concurrent array data-structure used to store pointers to threadlocal
- * handles.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef CONCURRENT_PTR_ARRAY_H
 #define CONCURRENT_PTR_ARRAY_H
 
@@ -73,13 +60,7 @@ public:
 
     ConcurrentPtrArray& operator=(ConcurrentPtrArray&& rhs)
     {
-        //Lock both lhs and rhsstructures
-
-        // lock rhs
-        // (prob unnecessary because using it concurrently will be undefined)
         rhs.lockWriter();
-        // lock lhs
-        // (prob unnecessary because using it concurrently will be undefined)
         lockWriter();
 
         size_t cap = capacity.load();

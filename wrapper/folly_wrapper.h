@@ -1,15 +1,3 @@
-/*******************************************************************************
- * wrapper/folly_wrapper.h
- *
- * Wrapper to use folly's folly::AtomicHashMap in our benchmarks
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef FOLLY_WRAPPER
 #define FOLLY_WRAPPER
 

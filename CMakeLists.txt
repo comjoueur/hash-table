@@ -1,15 +1,3 @@
-################################################################################
-# CMakeLists.txt
-#
-# Root CMake build script for growt.
-#
-# Part of Project growt - https://github.com/TooBiased/growt.git
-#
-# Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
-#
-# All rights reserved. Published under the BSD-2 license in the LICENSE file.
-################################################################################
-
 cmake_minimum_required (VERSION 2.8)
 
 # custom cmake scripts

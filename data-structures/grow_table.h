@@ -1,20 +1,3 @@
-/*******************************************************************************
- * data-structures/grow_table.h
- *
- * Defines the growtable architecture:
- *   GrowTable       - the global facade of our table
- *   GrowTableData   - the actual global object (immovable core)
- *   GrowTableHandle - local handles on the global object (thread specific)
- * The behavior of GrowTable can be specified using the Worker- and Exclusion-
- * strategies. They have significant influence esp. on how the table is grown.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #pragma once
 
 #include <atomic>

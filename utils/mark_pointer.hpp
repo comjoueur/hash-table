@@ -1,30 +1,12 @@
 #pragma once
 
-/*******************************************************************************
- * mark_pointer.hpp
- *
- * Set of functions, that uses the topmost 16 bits of an atomic pointer to
- * store some flags (e.g. for smart pointers / marking in concurrent algorithms)
- *
- * ATTENTION: This works, because the topmost 16 bits of pointers are currently
- * unused (on current hardware with current operating systems).
- * If this should ever change, we can probably use the bottommost bits (but this
- * really depends on the alignment of the stored elements).
- *
- * Part of my utils library utils_tm - https://github.com/TooBiased/utils_tm.git
- *
- * Copyright (C) 2019 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include <atomic>
 #include <cstddef>
 
 namespace utils_tm {
 namespace mark {
 
-/* FLAGS & BITMASK DEFINITIONS ************************************************/
+
     template<size_t i>
     inline constexpr size_t flag()
     {
@@ -44,7 +26,6 @@ namespace mark {
     }
 
 
-/* MARK ***********************************************************************/
     template<size_t i, class T=void >
     inline bool atomic_mark(std::atomic<T*>& tar, T*& exp)
     {
@@ -59,7 +40,6 @@ namespace mark {
     }
 
 
-/* UNMARK *********************************************************************/
     template<size_t i, class T=void >
     inline bool atomic_unmark_cas(std::atomic<T*>& tar, T* exp)
     {
@@ -79,7 +59,6 @@ namespace mark {
     }
 
 
-/* CLEAR **********************************************************************/
     template<size_t i, class T=void >
     inline bool atomic_clear(std::atomic<T*>& tar)
     {
@@ -93,7 +72,6 @@ namespace mark {
     }
 
 
-/* ACCESS FLAGS ***************************************************************/
     template<size_t i, class T=void>
     inline constexpr bool get_mark(T* ptr)
     {
@@ -106,5 +84,5 @@ namespace mark {
         return bool(size_t(ptr) & (~lower<15>()));
     }
 
-}; // namespace mark
-}; // namespace utils_tm
+};
+};

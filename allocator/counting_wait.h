@@ -1,16 +1,3 @@
-/*******************************************************************************
- * utils/counting_wait.h
- *
- * Simple counter that allows threads to wait until the counter is changed.
- * Waiting threads are sleeping using the futex syscall.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef COUNTING_WAIT_H
 #define COUNTING_WAIT_H
 

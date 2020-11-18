@@ -1,15 +1,3 @@
-/*******************************************************************************
- * tests/con_test.cpp
- *
- * basic contention test for more information see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include "tests/selection.h"
 #include "data-structures/returnelement.h"
 
@@ -23,15 +11,6 @@
 #include "example/update_fcts.h"
 
 #include <random>
-
-/*
- * This Test is meant to test the tables performance on uniform random inputs.
- * 0. Creating n random keys with zipf distribution
- * 1. Inserting n elements [1..n] (key, key)
- * 2. Looking for n elements - using different keys (likely not finding any)
- * 3. Looking for the n inserted elements (hopefully finding all)
- *    (correctness test using the index)
- */
 
 namespace otm = utils_tm::out_tm;
 namespace ttm = utils_tm::thread_tm;

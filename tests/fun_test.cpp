@@ -1,15 +1,3 @@
-/*******************************************************************************
- * tests/fun_test.cpp
- *
- * functionality test for more information see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include "tests/selection.h"
 #include "data-structures/returnelement.h"
 
@@ -22,24 +10,6 @@
 #include "example/update_fcts.h"
 
 #include <random>
-
-/*
- * This Test is meant to test the functionality of each table
- * 0.  Creating n random keys
- * 0.1 Test if generated table is empty (with n random keys)
- * 1.  Inserting n elements (key, 3)
- * 1.1 Test that each inserted key has value 3
- * 2.  Try to reinsert n keys with value 4 (should be unsuccessful)
- * 2.1 Check that no value has changed to 4
- * 3.  Update all n elements to value 5
- * 3.1 Check, that each value is now 5
- * 4.  insert or increment random keys between 2 and p+1
- * 4.1 sum all values of keys between 2 and p+1 to make sure no increment got lost
- * 5.  remove n/2 elements (every second element)
- * 5.1 make sure, that removed elements cannot be found
- *
- * the expected output is a row of ones (no 0)
- */
 
 const static uint64_t range = (1ull << 62) -1;
 namespace otm = utils_tm::out_tm;

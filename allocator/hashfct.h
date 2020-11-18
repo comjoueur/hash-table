@@ -1,15 +1,3 @@
-/*******************************************************************************
- * utils/hashfct.h
- *
- * Some hash functions -- the used hash function is chosen at compile time
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef HASHFCT_H
 #define HASHFCT_H
 

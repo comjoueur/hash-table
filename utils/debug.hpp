@@ -1,26 +1,5 @@
 #pragma once
 
-/*******************************************************************************
- * debug.hpp
- *
- * Some functions for onvenient Debugging
- *
- * dout(): returns output object for debug messages (switchable to file out ...)
- *
- * counter: defines a counter type that won't do anything if debug is turned of
- *          (note that it still consumes 1byte)
- * checker: rai encapsulates a size_t counter and checks if the counter has the
- *          expected value when the checker is destroyed
- *          (used for checking the number of acquired/released smartpointers
- *           within a function)
- *
- * Part of my utils library utils_tm - https://github.com/TooBiased/utils_tm.git
- *
- * Copyright (C) 2019 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include <atomic>
 #include <string>
 #include <iostream>
@@ -44,8 +23,6 @@ namespace debug_tm{
         return static_dout;
     }
 
-    // DEBUG OUTPUTS *** only print if debug_mode is on ************************
-    // outputs a message (in yellow) if in debug mode and condition is true
     inline void if_debug(const std::string& str,
                          [[maybe_unused]] bool condition = true)
     {
@@ -103,10 +80,6 @@ namespace debug_tm{
                                      dummy_counter>::type;
 
 
-    // CHECKER *** (either real_checker or dummy_checker) **********************
-    // on destructor checks wether the given counter has the expected difference
-    // used to sanity check the number of protected hazard counters
-    // two implementations real and dummy (debug mode or not)
     class real_checker
     {
     private:

@@ -1,16 +1,3 @@
-/*******************************************************************************
- * utils/test_coordination.h
- *
- * Some very basic thread functionalities (thread pinning and priorities)
- * using pthread
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef THREAD_BASICS_H
 #define THREAD_BASICS_H
 

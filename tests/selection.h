@@ -1,22 +1,6 @@
 
-/*******************************************************************************
- * tests/selection.h
- *
- * This file uses compile time constants, to include the correct files and
- * set HASHTYPE and ALLOCATOR defines for our tests/benchmarks
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef SELECTION_H
 #define SELECTION_H
-
-// THIS HEADER USES DEFINES TO SELECT THE CORRECT
-// HASHTABLE AT COMPILE TIME
 
 
 #ifdef ALIGNED

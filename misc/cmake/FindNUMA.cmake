@@ -1,14 +1,3 @@
-################################################################################
-# misc/cmake/FindNUMA.cmake
-#
-# Finds NUMA library and include directory
-#
-# Part of Project growt - https://github.com/TooBiased/growt.git
-#
-# Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
-#
-# All rights reserved. Published under the BSD-2 license in the LICENSE file.
-################################################################################
 
 find_library(
   NUMA_LIBRARIES

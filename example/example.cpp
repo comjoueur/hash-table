@@ -7,31 +7,12 @@
 
 using murmur2_hash = utils_tm::hash_tm::murmur2_hash;
 
-//////////////////////////////////////////////////////////////
 // USING definitions.h (possibly slower compilation)
 #include "data-structures/definitions.h"
 
 using Table_t = growt::uaGrow<murmur2_hash,
                               growt::AlignedAllocator<> >;
 
-//////////////////////////////////////////////////////////////
-// EQUAL RESULT without definitions.h (possibly faster compilation)
-//
-// #include "data-structures/markableelement.h"
-// #include "data-structures/circular.h"
-// #include "data-structures/strategy/wstrat_user.h"
-// #include "data-structures/strategy/estrat_async.h"
-// #include "data-structures/growtable.h"
-// using Table_t = growt::GrowTable<growt::Circular<growt::MarkableElement,
-//                                                  murmur2_hash,
-//                                                  growt::AlignedAllocator<> >,
-//                                  growt::WStratUser,
-//                                  growt::EStratAsync>
-//////////////////////////////////////////////////////////////
-
-
-// insert all keys between 1 and n into table with <key=i, data=i>
-// print message if insert is not successful
 void insertions(Table_t& table, size_t n)
 {
     // obtain a handle

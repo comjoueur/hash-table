@@ -1,17 +1,3 @@
-/*******************************************************************************
- * utils/poolallocator.h
- *
- * Pool allocator using the tbb::fixed_pool allocator
- * During first initialization all memory is zeroed to force virtual to physical
- * mapping (preventing some slowdown during growing phases)
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef POOLALLOCATOR_H
 #define POOLALLOCATOR_H
 

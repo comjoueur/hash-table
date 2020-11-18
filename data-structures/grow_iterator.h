@@ -1,13 +1,3 @@
-/*******************************************************************************
- * data-structures/grow_iterator.h
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #pragma once
 
 #include <functional>

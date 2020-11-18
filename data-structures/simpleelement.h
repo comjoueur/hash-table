@@ -1,16 +1,3 @@
-/*******************************************************************************
- * data-structures/simpleelement.h
- *
- * SimpleElements represent cells of our hash table data-structure. They
- * encapsulate some CAS and update methods.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef SIMPLEELEMENT_H
 #define SIMPLEELEMENT_H
 
@@ -155,14 +142,6 @@ inline bool SimpleElement::atomic_delete(const SimpleElement & expected)
 }
 
 
-
-
-
-
-// UPDATE FUNCTIONS PRECEDED BY SOME TEMPLATE MAGIC, WHICH CHECKS IF AN
-// ATOMIC VARIANT IS DEFINED.
-
-// TESTS IF A GIVEN OBJECT HAS A FUNCTION NAMED atomic
 template <typename TFunctor>
 class THasAtomic
 {

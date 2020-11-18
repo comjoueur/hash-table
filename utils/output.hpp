@@ -1,25 +1,5 @@
 #pragma once
 
-/*******************************************************************************
- * output.hpp
- *
- * This file contains an output type, that can be used to either represent a
- * file stream, or the normal output stream (cout)
- * - this is really useful if different outputs should be channeled to different
- *   files/output streams
- * - there are also some convenience/pretty paint options like:
- *   - colors
- *   - width objects, that can be passed through a stream
- *   - the possibility to print the binary+hex representation of numbers
- *
- *
- * Part of my utils library utils_tm - https://github.com/TooBiased/utils_tm.git
- *
- * Copyright (C) 2019 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include <iostream>
 #include <fstream>
 #include <sstream>

@@ -1,21 +1,5 @@
 #pragma once
 
-/*******************************************************************************
- * thread_coordination.hpp
- *
- * Offers low level functionality for thread synchronization
- * and parallel for loops (used to simplify writing tests/benchmarks)
- *
- * See below for an example
- * (or look into the benchmarks of any of my concurrent libraries)
- *
- * Part of my utils library utils_tm - https://github.com/TooBiased/utils_tm.git
- *
- * Copyright (C) 2019 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include <iostream>
 #include <atomic>
 #include <chrono>

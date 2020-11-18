@@ -1,15 +1,3 @@
-/*******************************************************************************
- * utils/aligned_allocator.h
- *
- * Simple allocator using memalign to get aligned memory
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef ALIGNED_ALLOCATOR_H
 #define ALIGNED_ALLOCATOR_H
 
@@ -19,7 +7,7 @@
 
 namespace growt {
 
-#define DEFAULT_ALIGNMENT 128 // two cacheline sizes => nicely aligned!
+#define DEFAULT_ALIGNMENT 128
 
 template<class  T = char,
          size_t A = DEFAULT_ALIGNMENT>
@@ -55,7 +43,7 @@ public:
         return static_cast<pointer>(memalign(A, n*sizeof(T)));
     }
 
-    void deallocate(pointer p, size_type /* size_hint */ = 0) noexcept
+    void deallocate(pointer p, size_type = 0) noexcept
     {   free(p);   }
 
     pointer adress(reference x) const noexcept

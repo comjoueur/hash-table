@@ -1,19 +1,5 @@
 #pragma once
 
-/*******************************************************************************
- * zipf_keygen.hpp
- *
- * Random number generator for zipf distributed numbers [1..universe_size]
- *  - universe and exponent are defined at the time of construction
- *  - random numbers can be generated individually, or in larger batches
- *
- * Part of my utils library utils_tm - https://github.com/TooBiased/utils_tm.git
- *
- * Copyright (C) 2019 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #include <cmath>
 #include <random>
 #include <memory>

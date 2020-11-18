@@ -1,14 +1,3 @@
-/*******************************************************************************
- * tests/agg_test.cpp
- *
- * aggregation test for more information see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
 
 #include "tests/selection.h"
 #include "data-structures/returnelement.h"
@@ -27,14 +16,6 @@
 #ifdef MALLOC_COUNT
 #include "malloc_count.h"
 #endif
-
-/*
- * This Test is meant to test the tables performance on uniform random inputs.
- * 0. Creating n random keys with zipf distribution between [2..n+1]
- * 1. Inserting n random keys using the insert_or_update Function
- *    [1..n]
- * 2. Validating the end result looking for each key and accumulating the results
- */
 
 namespace otm = utils_tm::out_tm;
 namespace ttm = utils_tm::thread_tm;

@@ -1,16 +1,3 @@
-/*******************************************************************************
- * data-structures/base_circular.h
- *
- * Non growing table variant, that is also used by our growing
- * tables to represent the current table.
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #pragma once
 
 #include <stdlib.h>

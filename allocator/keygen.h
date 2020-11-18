@@ -1,16 +1,3 @@
-/*******************************************************************************
- * utils/hashfct.h
- *
- * Zipf distributed key generation -- using an explicitly computed probability
- * distribution and a binary search
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef KEYGEN_H
 #define KEYGEN_H
 

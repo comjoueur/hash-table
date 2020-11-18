@@ -1,15 +1,3 @@
-/*******************************************************************************
- * data-structures/strategy/estrat_async.h
- *
- * see below
- *
- * Part of Project growt - https://github.com/TooBiased/growt.git
- *
- * Copyright (C) 2015-2016 Tobias Maier <t.maier@kit.edu>
- *
- * All rights reserved. Published under the BSD-2 license in the LICENSE file.
- ******************************************************************************/
-
 #ifndef ESTRAT_ASYNC_H
 #define ESTRAT_ASYNC_H
 
@@ -18,34 +6,6 @@
 #include <memory>
 
 #include "data-structures/markableelement.h"
-
-/*******************************************************************************
- *
- * This is a exclusion strategy for our growtable.
- *
- * Every exclusion strategy has to implement the following
- *  - subclass: global_data_t      (is stored at the growtable object)
- *     - THIS OBJECT STORES THE ACTUAL HASH TABLE (AT LEAST THE POINTER)
- *           (This is important, because the exclusion strategy dictates,
- *            if reference counting is necessary.)
- *  - subclass: local_data_t       (is stored at each handle)
- *     - init()
- *     - deinit()
- *     - getTable()   (gets current table and protects it from destruction)
- *     - rlsTable()   (stops protecting the table)
- *     - grow()       (creates a new table and initiates a growing step)
- *     - helpGrow()   (called when an operation is unsuccessful,
- *                     because the table is growing)
- *     - migrate()    (called by the worker strategy to execute the migration.
- *                     Done here to ensure the table is not concurrently freed.)
- *
- * This specific strategy uses a fully asynchronous growing approach,
- * Any thread might begin a growing step, afterwards threads can join
- * to help with table migration. Meanwhile updates can change the table,
- * but not change elements that have already been copied. This has to be
- * ensured through marking copied elements.
- *
- ******************************************************************************/
 
 namespace growt {
 
@@ -160,35 +120,6 @@ public:
             }
 
             _worker_strat.execute_migration(*this, _epoch);
-
-            /*/ TEST STUFF =====================================================
-            static std::atomic_size_t already{0};
-            auto temp = already.fetch_add(1);
-            if (temp == 0)
-            {
-                while (global._n_helper.load(std::memory_order_acquire) > 1) ;
-                bool all_fine = true;
-                auto& target = *w_table;
-                for (size_t i = 0; i < target.size; ++i)
-                {
-                    auto curr = target.t[i];
-                    if (curr.isMarked())
-                    {
-                        std::cout << "Cell is marked " << i << std::endl;
-                        all_fine = false;
-                    }
-                    if (curr.isNew())
-                    {
-                      std::cout << "Cell is new    " << i << std::endl;
-                      all_fine = false;
-                    }
-                }
-                while (!all_fine);
-                already.store(0, std::memory_order_release);
-            }
-
-            leave_migration();
-            //*/// =============================================================
 
             end_grow();
         }
